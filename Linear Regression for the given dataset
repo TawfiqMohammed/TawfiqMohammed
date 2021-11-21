@@ -1,3 +1,4 @@
+# Python Code to implment a linear regression model for a given dataset
 import statistics
 import numpy as nmp
 import pandas as pds
@@ -64,6 +65,7 @@ RS =(df_2['(Yp - Y)^2'].sum())/(df_2['(y(i) - Y)^2'] .sum())
 
 print('\nValue of R-squared =', RS)
 
+# Graphical Representation of the model
 plt.figure(figsize =(14, 6))
 plt.plot(x, df_2['Yp'])
 plt.scatter(x, y)
