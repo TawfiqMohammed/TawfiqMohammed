@@ -1,0 +1,72 @@
+import statistics
+import numpy as nmp
+import pandas as pds
+import matplotlib.pyplot as plt
+
+# User dataset
+x = (1, 2, 3, 4, 5)
+y = (3, 4, 2, 4, 5)
+print('x(i) = ', x)
+print('y(i) = ', y)
+
+# Mean of x and y
+mean_x = statistics.mean(x)
+mean_y = statistics.mean(y)
+print('\nMean of x (X) = ', mean_x)
+print('Mean of y (Y) = ', mean_y)
+print('\n')
+
+# Finding the slope, m
+# By creating a dataframe
+df = pds.DataFrame()
+df['i'] = [1, 2, 3, 4, 5]
+df['x(i)'] = x
+df['y(i)'] = y
+df['x(i) - X'] = df['x(i)'] - mean_x
+df['y(i) - Y'] = df['y(i)'] - mean_y
+df['(x(i) - X)^2'] = df['x(i) - X']**2
+df['(y(i) - Y)^2'] = df['y(i) - Y']**2
+df['(x(i) - X)(y(i) - Y)'] = df['x(i) - X']*df['y(i) - Y']  
+print(df)
+
+E_1 = df['(x(i) - X)(y(i) - Y)'].sum()
+E_2 = df['(x(i) - X)^2'].sum()
+
+print('\nE((x(i) - X)(y(i) - Y)) = ', E_1)
+print('E((x(i) - X)^2) = ', E_2)
+
+m = E_1/E_2
+
+print('\nSlope(m) = ', m)
+
+# Finding y-intercept
+c = mean_y - m*mean_x
+print ('y-intercept(c) = ',c)
+print ('\n')
+
+#Finding the values of R-squared
+df_2 = pds.DataFrame()
+df_2['i'] = [1, 2, 3, 4, 5]
+df_2['x(i)'] = x
+df_2['y(i)'] = y
+df_2['Yp'] = m*df_2['x(i)'] + c
+df_2['Yp - Y'] = df_2['Yp'] - mean_y
+df_2['(Yp - Y)^2'] = df_2['Yp - Y'] **2
+df_2['(y(i) - Y)^2'] = df['(y(i) - Y)^2'] 
+df_2
+
+print(df_2)
+
+print('\nE((Yp - Y)^2) = ', df_2['(Yp - Y)^2'].sum())
+print('E((y(i) - Y)^2) = ', df_2['(y(i) - Y)^2'] .sum())
+
+RS =(df_2['(Yp - Y)^2'].sum())/(df_2['(y(i) - Y)^2'] .sum())
+
+print('\nValue of R-squared =', RS)
+
+plt.figure(figsize =(14, 6))
+plt.plot(x, df_2['Yp'])
+plt.scatter(x, y)
+plt.yticks([2, 3, 4, 5])
+plt.grid(linewidth = 1, linestyle = "--")
+plt.show
