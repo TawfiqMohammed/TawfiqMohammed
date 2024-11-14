@@ -37,20 +37,9 @@
 <h2 align="center">⚒️ Languages-Frameworks-Tools ⚒️</h2>
 <br/>
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=vscode,github,git,r,python,huggingface,mongodb,tableau, mysql" />
+    <img src="https://skillicons.dev/icons?i=vscode,github,git,r,python,mongodb,pycharm,pytorch,replit,sklearn,tensorflow,mysql" />
 </div>
 
 <br/>
 <hr/>
-
-<div align="center">
-  <h2>🐍 My Contributions 🐍</h2>
-  <br>
-  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/TawfiqMohammed/TawfiqMohammed/output/github-contribution-grid-snake.svg" />
-  
-  <br/><br/><br/>
-</div>
-
-<hr/>
-
 
