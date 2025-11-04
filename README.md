@@ -11,7 +11,7 @@
 
 <div align="center">
  
- 🔭 I’m currently working on **Medical Chatbot**
+ 🔭 I’m currently working on **Github Repo Analyzer**
  
  🌱 I’m currently learning **LLMs, AWS, Docker**
 
